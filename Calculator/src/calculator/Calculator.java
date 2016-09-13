@@ -34,11 +34,11 @@ class Calculator extends JFrame {
     private double n2;
     JTextField textf;
 
-Boolean addBool = false ;
-Boolean subBool = false ;
-Boolean divBool = false ;
-Boolean mulBool = false ;
-String total = "";
+Boolean add = false ;
+Boolean sub = false ;
+Boolean div = false ;
+Boolean mul = false ;
+
 
  public Calculator() {
     fram1=new JFrame("Calculator");
@@ -117,10 +117,10 @@ class Clear implements ActionListener {
         n1 = 0;
         n2 =0 ;
         textf.setText("");
-        addBool = false ;
-        subBool = false ;
-        mulBool = false ;
-        divBool = false ;
+        add = false ;
+        sub = false ;
+        mul = false ;
+        div = false ;
        
     }
 }
@@ -190,7 +190,7 @@ class Zero implements ActionListener {
     public void actionPerformed(ActionEvent e) {
         n1 = Double.parseDouble(textf.getText());
                     textf.setText("");
-                    addBool = true ;
+                    add = true ;
 
     }
 }
@@ -198,14 +198,14 @@ class Subtract implements ActionListener {
     public void actionPerformed(ActionEvent e) {
         n1 = Double.parseDouble(textf.getText());
        textf.setText("");
-        subBool =true;
+        sub =true;
     }
 }
 class Multiply implements ActionListener {
     public void actionPerformed(ActionEvent e) {
         n1 = Double.parseDouble(textf.getText());
        textf.setText("");
-        mulBool =true;
+        mul =true;
 
     }
 }
@@ -213,19 +213,19 @@ class Divide implements ActionListener {
     public void actionPerformed(ActionEvent e) {
          n1 = Double.parseDouble(textf.getText());
        textf.setText("");
-        divBool = true;
+        div = true;
     }
 }
 class Solve implements ActionListener {
     public void actionPerformed(ActionEvent e) {
                     n2 = Double.parseDouble(  textf.getText() );
-                    if ( addBool == true  )
+                    if ( add == true  )
                         n2 = n2 + n1;
-                    else if ( subBool == true  )
+                    else if ( sub == true  )
                        n2 = n2 - n1;
-                    else if ( mulBool == true  )
+                    else if ( mul == true  )
                         n2 = n2 * n1;
-                    else if ( divBool == true  )
+                    else if ( div == true  )
                         n2 = n1 / n2;
        textf.setText(  Double.toString(n2) );
 
@@ -238,7 +238,7 @@ class Solve implements ActionListener {
 
 public static void main(String[] args) {
     // TODO Auto-generated method stub
-    Calculator calc = new Calculator();
+    Calculator calcu = new Calculator();
        
 }
 } 
